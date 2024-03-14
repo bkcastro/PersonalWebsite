@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-*
-{
+* {
     margin: 0;
     padding: 0;
 }
@@ -13,11 +12,25 @@ div {
     z-index: 100;
 }
 
-.webgl
-{
+.webgl {
     z-index: 0;
     position: fixed;
     top: 0;
     left: 0;
     outline: none;
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
 }

@@ -28,81 +28,50 @@
     </style>
 </head>
 
-<body id="body" class="bg-gray-200 flex font-sans justify-center items-center h-screen">
-    <div class="bg-white flex flex-wrap rounded-lg p-4 justify-center items-center">
-        <div class="text-center p-10 pr-11">
-            <h2 class="text-xl font-semibold mb-3">Brandon Castro</h2>
-            <p>3D Graphics | XR Devloper</p>
-            <p>Research assistant for SET Lab</p>
-            <p>Webmaster for UCSC AI Club</p>
-            <p>I read shaders for fun</p>
+<body id="body" class="bg-gray-200 font-sans ">
 
-            <div class="flex justify-center pt-3 gap-1 w-full">
-                <a class="" href="https://github.com/bkcastro" target="_blank"><img width="40" height="40"
-                        src="https://img.icons8.com/material-outlined/40/github.png" alt="github" />
-                </a>
-                <a class="" href="https://www.linkedin.com/in/brandon-castro22/" target="_blank"><img width="40"
-                        height="40" src="https://img.icons8.com/ios-filled/40/linkedin.png" alt="linkedin" /></a>
-                <a class="" href="https://www.instagram.com/bkcastro_/" target="_blank"><img width="40" height="40"
-                        src="https://img.icons8.com/ios-glyphs/40/instagram-new.png" alt="instagram-new" /></a>
-                <a class="" href="https://www.tiktok.com/@liljgrem" target="_blank"><img width="40" height="40"
-                        src="https://img.icons8.com/ios-filled/50/tiktok--v1.png" alt="instagram-new" /></a>
-
+    <div class="bg-white flex flex-wrap rounded-lg p-4 justify-center items-center h-screen w-screen">
+        <div class=" h-1/2 w-1/2 flex justify-center">
+            <div class="my-auto w-min flex flex-col gap-2">
+                <h2 class="text-2xl font-semibold mb-3">Brandon Castro</h2>
+                <p>Interest in Software and XR development.</p>
+                <p class="w-96">Research assistant at UCSC Social Emotional Technology Lab, leading the development for
+                    a shared
+                    AR/VR tool for spatial scientific sense-making about wildfire evacuation.</p>
+                <p>I love making 3D experinces. </p>
+                <div class="py-2 flex flex-flow gap-2 underline">
+                    <a class=" hover:text-red-500" href="https://www.tiktok.com/@liljgrem" target="_blank">TikTok</a>
+                    <a class="hover:text-black text-yellow-500" href="https://www.instagram.com/bkcastro_/"
+                        target="_blank">Instagram</a>
+                    <a class="hover:text-black text-green-600" href="https://github.com/bkcastro"
+                        target="_blank">Github</a>
+                    <a class="hover:text-black text-blue-500" href="https://www.linkedin.com/in/brandon-castro22/"
+                        target="_blank">Linkedin</a>
+                </div>
+                <p class="my-2">Contact: c1brandon626@gmail.com</p>
             </div>
         </div>
 
-        <div class="grid grid-flow-row-dense grid-cols-2 sm:grid-cols-3 grid-rows-3 gap-3" id="gridContainer">
+        <div class="w-1/2 h-2/3 relative bg-black" id="container">
+
+            <div class="absolute bottom-0 mx-auto left-1/2 flex justify-center">
+                <button id="reset" class=" h-10 w-10 hover:opacity-100 opacity-50">
+                    <img src="images/reset.png" alt="Reset" class="m-auto">
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute bottom-5 cursor-pointer" onclick="scrollDown()">
+            <div class="text-4xl animate-pulse">&#x25BC;</div>
         </div>
     </div>
+
+    <div class="w-screen h-screen bg-black flex justify-center">
+        <p>...</p>
+    </div>
+
 </body>
 
-<script>
-    // Function to detect if the user is using a mobile device
-    function isMobileDevice() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
-    // Function to remove a class from an element
-    function removeClass(element, className) {
-        element.classList.remove(className);
-    }
-
-    // Check if the user is on a mobile device
-    if (isMobileDevice()) {
-        // Get the element to remove the class from
-        var element = document.getElementById('body');
-        // Remove the Tailwind CSS class 'remove-on-mobile' from the element
-        removeClass(element, 'h-screen');
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        const gridContainer = document.getElementById('gridContainer');
-
-        // Sample GIF URLs, replace with your actual project GIFs
-        const vids = [
-            'vid1.mp4',
-            'vid2.mp4',
-            'vid3.mp4',
-            'vid4.mp4',
-            'vid5.mp4',
-            'vid6.mp4',
-            'vid7.mp4',
-            'vid8.mp4',
-            'vid9.mp4',
-        ];
-
-        vids.forEach(url => {
-            const gridItem = document.createElement('div');
-            gridItem.classList.add('grid-item');
-            const vid = document.createElement('video');
-            vid.src = url;
-            vid.autoplay = true;
-            vid.loop = true;
-            vid.muted = true;
-            gridItem.appendChild(vid);
-            gridContainer.appendChild(gridItem);
-        });
-    });
-</script>
+<script type="module" src="script.js"></script>
 
 </html>
